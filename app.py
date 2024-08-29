@@ -18,7 +18,8 @@ Subjetividad: Mide cuánto del contenido es subjetivo (opiniones, emociones, cre
 
 # Análisis de Polaridad y Subjetividad
 with st.expander('Analizar Polaridad y Subjetividad en un texto'):
-    texto = st.text_area('Escribe por favor: ')
+    text1 = st.text_area('Escribe por favor: ')
+    if text1:
     translation = translator.translate(text1, src="es", dest="en")
     trans_text = translation.text
     blob = TextBlob(trans_text)
