@@ -23,20 +23,23 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
     text1 = st.text_area('Escribe por favor: ')
     if text1:
 
-        #translation = translator.translate(text1, src="es", dest="en")
-        #trans_text = translation.text
-        #blob = TextBlob(trans_text)
-        blob = TextBlob(text1)
+        translation = translator.translate(text1, src="es", dest="en")
+        trans_text = translation.text
+        blob = TextBlob(trans_text)
+        
        
         
         st.write('Polarity: ', round(blob.sentiment.polarity,2))
         st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
         x=round(blob.sentiment.polarity,2)
         if x >= 0.5:
+            st.image('AbuFeliz.jpg')
             st.write( 'Es un sentimiento Positivo 😊')
         elif x <= -0.5:
+            st.image('abueemo.jpg')
             st.write( 'Es un sentimiento Negativo 😔')
         else:
+            st.image('abueabue.jpeg')
             st.write( 'Es un sentimiento Neutral 😐')
 
 with st.expander('Corrección en inglés'):
