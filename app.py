@@ -11,8 +11,7 @@ with st.sidebar:
                ("""
                 Polaridad: Indica si el sentimiento expresado en el texto es positivo, negativo o neutral. 
                 Su valor oscila entre -1 (muy negativo) y 1 (muy positivo), con 0 representando un sentimiento neutral.
-                
-               Subjetividad: Mide cuánto del contenido es subjetivo (opiniones, emociones, creencias) frente a objetivo
+                Subjetividad: Mide cuánto del contenido es subjetivo (opiniones, emociones, creencias) frente a objetivo
                (hechos). Va de 0 a 1, donde 0 es completamente objetivo y 1 es completamente subjetivo.
 
                  """
