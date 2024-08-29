@@ -30,11 +30,11 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         
         # Determina el tipo de sentimiento y muestra la imagen correspondiente
         if polaridad >= 0.5:
-            st.image('https://i.imgur.com/4B6QOIZ.png', caption='Sentimiento Positivo 😊', use_column_width=True)
+            st.image('AbuFeliz.jpg', caption='Sentimiento Positivo 😊', use_column_width=True)
         elif polaridad <= -0.5:
-            st.image('https://i.imgur.com/2m4tzP1.png', caption='Sentimiento Negativo 😔', use_column_width=True)
+            st.image('abueemo.jpg', caption='Sentimiento Negativo 😔', use_column_width=True)
         else:
-            st.image('https://i.imgur.com/ZZyje85.png', caption='Sentimiento Neutral 😐', use_column_width=True)
+            st.image('abuebue.jpeg', caption='Sentimiento Neutral 😐', use_column_width=True)
 
 # Corrección de texto en inglés
 with st.expander('Corrección en inglés'):
