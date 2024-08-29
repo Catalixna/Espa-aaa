@@ -1,8 +1,9 @@
-
-
 import streamlit as st
 from textblob import TextBlob
+from googletrans import Translator
 
+# Configuraciones iniciales
+translator = Translator()
 st.title('Análisis de Sentimiento con TextBlob')
 
 # Explicación sobre Polaridad y Subjetividad
@@ -18,8 +19,13 @@ Subjetividad: Mide cuánto del contenido es subjetivo (opiniones, emociones, cre
 # Análisis de Polaridad y Subjetividad
 with st.expander('Analizar Polaridad y Subjetividad en un texto'):
     texto = st.text_area('Escribe por favor: ')
+    translation = translator.translate(text1, src="es", dest="es")
+    trans_text = translation.text
+    blob = TextBlob(trans_text)
+       
+       
     if texto:
-        # Analiza el texto directamente en español
+        # Realiza la traducción y el análisis
         blob = TextBlob(texto)
         polaridad = round(blob.sentiment.polarity, 2)
         subjetividad = round(blob.sentiment.subjectivity, 2)
@@ -29,10 +35,15 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         
         # Determina el tipo de sentimiento y muestra la imagen correspondiente
         if polaridad >= 0.5:
-            st.image('AbuFeliz.jpg', caption='Sentimiento feliz de ver a los nietos 😊', use_column_width=True)
+            st.image('https://i.imgur.com/4B6QOIZ.png', caption='Sentimiento Positivo 😊', use_column_width=True)
         elif polaridad <= -0.5:
-            st.image('abueemo.jpg', caption='Sentimiento triste 😔', use_column_width=True)
+            st.image('https://i.imgur.com/2m4tzP1.png', caption='Sentimiento Negativo 😔', use_column_width=True)
         else:
-            st.image('abuebue.jpeg', caption='Sentimiento viendo tele 😐', use_column_width=True)
+            st.image('https://i.imgur.com/ZZyje85.png', caption='Sentimiento Neutral 😐', use_column_width=True)
 
-
+# Corrección de texto en inglés
+with st.expander('Corrección en inglés'):
+    texto_ingles = st.text_area('Escribe en inglés para corrección: ', key='4')
+    if texto_ingles:
+        blob2 = TextBlob(texto_ingles)
+        st.write(blob2.correct())
