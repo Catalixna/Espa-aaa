@@ -35,9 +35,4 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         else:
             st.image('abuebue.jpeg', caption='Sentimiento viendo tele 😐', use_column_width=True)
 
-# Corrección de texto en inglés
-with st.expander('Corrección en inglés'):
-    texto_ingles = st.text_area('Escribe en inglés para corrección: ', key='4')
-    if texto_ingles:
-        blob2 = TextBlob(texto_ingles)
-        st.write(blob2.correct())
+
