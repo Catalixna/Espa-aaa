@@ -32,10 +32,10 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         st.write('Polarity: ', round(blob.sentiment.polarity,2))
         st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
         x=round(blob.sentiment.polarity,2)
-        if polaridad >= 0.5:
+        if x >= 0.5:
             st.image('AbuFeliz.jpg') 
             st.write=('Sentimiento feliz de ver a los nietos 😊')
-        elif polaridad <= -0.5:
+        elif x <= -0.5:
             st.image('abueemo.jpg') 
             st.write=('Sentimiento triste 😔')
         else:
