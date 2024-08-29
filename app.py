@@ -1,3 +1,5 @@
+
+
 import streamlit as st
 from textblob import TextBlob
 from googletrans import Translator
@@ -20,7 +22,7 @@ Subjetividad: Mide cuánto del contenido es subjetivo (opiniones, emociones, cre
 with st.expander('Analizar Polaridad y Subjetividad en un texto'):
     texto = st.text_area('Escribe por favor: ')
     if texto:
-        # Realiza la traducción y el análisis
+        # Analiza el texto directamente en español
         blob = TextBlob(texto)
         polaridad = round(blob.sentiment.polarity, 2)
         subjetividad = round(blob.sentiment.subjectivity, 2)
@@ -30,11 +32,11 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         
         # Determina el tipo de sentimiento y muestra la imagen correspondiente
         if polaridad >= 0.5:
-            st.image('AbuFeliz.jpg', caption='Sentimiento Positivo 😊', use_column_width=True)
+            st.image('AbuFeliz.jpg', caption='Sentimiento feliz de ver a los nietos 😊', use_column_width=True)
         elif polaridad <= -0.5:
-            st.image('abueemo.jpg', caption='Sentimiento Negativo 😔', use_column_width=True)
+            st.image('abueemo.jpg', caption='Sentimiento triste 😔', use_column_width=True)
         else:
-            st.image('abuebue.jpeg', caption='Sentimiento Neutral 😐', use_column_width=True)
+            st.image('abuebue.jpeg', caption='Sentimiento viendo tele 😐', use_column_width=True)
 
 # Corrección de texto en inglés
 with st.expander('Corrección en inglés'):
@@ -42,3 +44,4 @@ with st.expander('Corrección en inglés'):
     if texto_ingles:
         blob2 = TextBlob(texto_ingles)
         st.write(blob2.correct())
+
