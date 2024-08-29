@@ -37,7 +37,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
             st.write=('Sentimiento feliz de ver a los nietos 😊')
         elif polaridad <= -0.5:
             st.image('abueemo.jpg') 
-            st.write='Sentimiento triste 😔')
+            st.write=('Sentimiento triste 😔')
         else:
             st.image('abuebue.jpeg')
             st.write=('Sentimiento viendo tele 😐')
