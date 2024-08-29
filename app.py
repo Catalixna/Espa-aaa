@@ -39,7 +39,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
             st.image('abueemo.jpg')
             st.write( 'Es un sentimiento Negativo 😔')
         else:
-            st.image('miau.jpeg')
+            st.image('miau.jpg')
             st.write( 'Es un sentimiento Neutral 😐')
 
 with st.expander('Corrección en inglés'):
