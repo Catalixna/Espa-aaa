@@ -2,10 +2,7 @@
 
 import streamlit as st
 from textblob import TextBlob
-from googletrans import Translator
 
-# Configuraciones iniciales
-translator = Translator()
 st.title('Análisis de Sentimiento con TextBlob')
 
 # Explicación sobre Polaridad y Subjetividad
@@ -44,4 +41,3 @@ with st.expander('Corrección en inglés'):
     if texto_ingles:
         blob2 = TextBlob(texto_ingles)
         st.write(blob2.correct())
-
